@@ -1,0 +1,166 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.container{
+    width: 100%;
+}
+
+.ImgHead{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ImgHead img{
+    width: 250px;
+    height: 100px;
+}
+
+.importantHead{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.fa-facebook{
+    color: #1e5ee9;
+}
+
+.fa-instagram{
+    color: #4f5bd5
+}
+
+.fa-youtube{
+    color: #FF0000;
+}
+
+
+.textHead{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.studentPortal{
+    padding: 5px 10px;
+    border-radius: 100px;
+    border: 1px solid #1e5ee9;
+    gap: 10px;
+}
+
+.studentPortal a{
+    text-decoration: none;
+}
+
+.fa-user-graduate{
+    margin-right: 5px;
+}
+
+.importantLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+}
+
+.importantLinks div{
+    padding: 7px;
+    border: solid rgb(130, 129, 129, 0.2) 1px;
+}
+
+.importantLinks div:nth-child(1){
+    color: #8BC541;
+    font-weight: bold;
+}
+
+.Separator {
+    margin-left: 50px;
+    margin-right: 50px;
+    color: gray;
+    opacity: 0.2;
+}
+
+form{
+    margin-bottom: 2rem;
+}
+
+.inputs{
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.InputBox{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.InputBox select {
+    padding: 20px 10px;
+    font-size: 1rem;
+    border: 1px #8BC541 solid;
+    border-radius: 8px;
+}
+
+.InputBox select:focus{
+    outline: none;
+    border: 1px #0865AB solid;
+}
+
+.InputBox label{
+    color: #0865AB;
+}
+
+.InputBox input {
+    padding: 20px 10px;
+    font-size: 1rem;
+    border: 1px #8BC541 solid;
+    border-radius: 8px;
+}
+
+.InputBox input:focus{
+    outline: none;
+    border: 1px #0865AB solid;
+}
+
+ol{
+    padding: 5rem;
+}
+
+form .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 10rem;
+}
+
+.btn button{
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 1rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #1e5ee9   ;
+}
