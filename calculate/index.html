@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalculateX</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <section class="header">
+            <h1>CalculateX</h1>
+        </section>
+        <main class="main">
+            <div class="input">
+                <input type="text" value="0" id="result" disabled />
+            </div>
+            <div class="buttons">
+                <div class="row1">
+                    <button class="button" onclick="display(7)" value="7">7</button>
+                    <button class="button" onclick="display(8)" value="8">8</button>
+                    <button class="button" onclick="display(9)" value="9">9</button>
+                    <button class="button del" onclick="del()" id="del">DEL</button>
+                </div>
+                <div class="row2">
+                    <button class="button" onclick="display(4)" value="4">4</button>
+                    <button class="button" onclick="display(5)" value="5">5</button>
+                    <button class="button" onclick="display(6)" value="6">6</button>
+                    <button class="button operator" onclick="display('+')" id="add" value="+">+</button>
+                </div>
+                <div class="row3">
+                    <button class="button" onclick="display(1)" value="1">1</button>
+                    <button class="button" onclick="display(2)" value="2">2</button>
+                    <button class="button" onclick="display(3)" value="3">3</button>
+                    <button class="button operator" onclick="display('-')" value="-">-</button>
+                </div>
+                <div class="row4">
+                    <button class="button" onclick="display('.')" value=".">.</button>
+                    <button class="button" onclick="display(0)" value="0">0</button>
+                    <button class="button" onclick="display('/')" value="/">/</button>
+                    <button class="button operator" style="padding-left: 2.85rem; padding-left: 2.85rem;"
+                        value="*">X</button>
+                </div>
+                <div class="row5">
+                    <button class="button special" onclick="reset()" id="reset">RESET</button>
+                    <button class="button special" onclick="calc()" id="eval">=</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
