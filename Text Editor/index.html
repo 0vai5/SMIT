@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Text Editor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="text-editor">
+      <div class="toolbar">
+        <select id="fontFamily" onchange="fontFamily(this.value)">
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="helvetica">Helvetica</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Sans Serif">Sans Serif</option>
+          <option value="monosapce">monospace</option>
+        </select>
+
+        <select id="fontSize" onchange="textSize(this.value)">
+          <option value="12">Font Size</option>
+          <option value="10">Small</option>
+          <option value="12">Normal</option>
+          <option value="18">Large</option>
+          <option value="25">X Large</option>
+        </select>
+
+        <input
+          type="color"
+          id="textColor"
+          onchange="textColor(this.value)"
+          title="Text Color"
+        />
+
+        <button onclick="TextFormat('bold')" title="Bold"><b>B</b></button>
+        <button onclick="TextFormat('italic')" title="Italic"><i>I</i></button>
+        <button onclick="TextFormat('underline')" title="Underline">
+          <u>U</u>
+        </button>
+      </div>
+
+      <div id="editor" contenteditable="true">Type your text here...</div>
+    </div>
+  </body>
+  <script src="./app.js"></script>
+</html>
