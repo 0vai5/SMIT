@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+.container .upperHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 40px;
+    background-color: #EEEEEE;
+
+}
+
+.upperHeaderLeft ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.3rem;
+    align-items: center;
+    list-style: none;
+    font-size: 12px;
+    font-weight: 550;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    background-color: #fcfcfc;
+    border: none;
+}
+
+main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+main .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    position: sticky;
+}
+
+.header .headerRight ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.headerBtn1 {
+    padding: 11px 29px;
+    background-color: #366DB7;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.headerBtn2 {
+    padding: 11px 29px;
+    background-color: #8DC63F;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 1.45rem;
+}
+
+.heroLeft, .heroRight {
+    flex: 1;
+}
+
+.heroLeft {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.heroLeft h1 {
+    font-size: 2.5rem;
+    line-height: 50px;
+}
+
+.heroBtn {
+    padding: 11px 29px;
+
+}
+
+.heroRight {
+    text-align: center;
+}
+
+.quickDonate {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #F0FCDC;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    margin-bottom: 1.45rem;
+}
+
+.quickDonate .amount {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount .general {
+    background-color: #424242;
+    color: white;
+    padding: 10px 5px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    font-size: 1rem;
+}
+
+.amount .currency {
+    background-color: #424242;
+    color: white;
+    padding: 10px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.amount input {
+    padding: 13px;
+    border: none;
+}
+
+.donateBtn {
+    background-color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.donateNowBtn {
+    padding: 11px 29px;
+    background-color: #8DC63F;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.educationHero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 1.45rem;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+}
+
+.educationHero img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.educationHero .eduBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px 15px;
+    padding: 11px 40px;
+    background-color: #8DC63F;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.serviceCardContainer1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.45rem;
+}
+
+.services .servicesHeading {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 1.3rem;
+}
+
+.serviceCardContainer1 .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background:#F3FDE2;
+    border-radius: 10px;
+}
+
+.serviceCardContainer1 .card:nth-last-child(1) {
+    padding: 1.1rem 3rem;
+}
+
+.serviceCardContainer2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.45rem;
+}
+
+.serviceCardContainer2 .card1 {
+    background: url('./src/HungerDonation.jpg') center center/cover no-repeat;
+    height: 250px;
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+}
+
+.card1 div {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.card1 div .serviceCardBtn {
+    padding: 11px 29px;;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 100%;
+    background-color: #8DC63F;
+}
+
+.serviceCardContainer2 .card2 {
+    background: url('./src/Vocationa;.jpg') center center/cover no-repeat;
+    height: 250px;
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+}
+
+.card2 div {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.card2 div .serviceCardBtn {
+    padding: 11px 29px;;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 100%;
+    background-color: #8DC63F;
+}
+
+.serviceCardContainer2 .card3 {
+    background: url('./src/ITDonation.jpg') center center/cover no-repeat;
+    height: 250px;
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+}
+
+.card3 div {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.card3 div .serviceCardBtn {
+    padding: 11px 29px;;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 100%;
+    background-color: #8DC63F;
+}
+
+.otherServices {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+.otherServices .otherServicesImage {
+    position: relative;
+    width: 50%;
+    height: 80vh;
+    background: url('./src/projects.jpg') center center/cover no-repeat;
+    border-top-left-radius: 60px;
+}
+
+.otherServicesText {
+    align-items: center;
+    background-color: #8dc63f !important;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top-left-radius: 60px;
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    padding: 65px;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    color: #ffffff;
+}
+
+.otherServicesTransparentBox {
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    border-top-right-radius: 100px;
+    height: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+}
+
+
+.otherServicesTransparentBox2 {
+    background-color: transparent;
+    border-left: 1px solid #fff;
+    bottom: 0;
+    height: 50%;
+    position: absolute;
+    right: 0;
+    width: 50%;
+}
+
+.otherServicesContent {
+    width: 50%;
+    padding-left: 10px;
+}
+
+.otherServicesContentItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+}
+
+.bullet {
+    height: 25px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #EEEEEE;
+}
+
+.otherServicesContentItem h4 {
+    color: #366DB7;
+}
+
+.counter {
+    height: 50vh;
+    width: 100%;
+    padding: 5rem;
+    background: #366DB7;
+    margin-bottom: 1rem;
+}
+
+.counter  .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container > .counterItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 9px;
+    color: #fff;
+}
+
+.counterItemImage {
+    position: relative;
+    height: 100px;
+    width: 110px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.counterItemImage img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 1.6rem;
+}
+
+.testimonials .testimonialHead {
+    text-align: center;
+}
+
+.testimonials .testimonialHead p {
+    color: #8DC63F;
+}
+
+.testimonialCard {
+    text-align: center;
+    background-color: #EEEEEE;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.testimonialCard img {
+    border-radius: 50%;
+    border: none;
+}
+
+.testimonialCard h1 {
+    color: #366DB7;
+}
+
+.testimonialArrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 0.6rem;
+}
+
+.testimonialArrowBtn {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.testimonialArrowBtn:nth-child(1) {
+    color: #424242;
+    background-color: #fcfcfc;
+}
+
+.testimonialArrowBtn:nth-child(2) {
+    background-color: #8DC63F;
+    color: #fff;
+}
