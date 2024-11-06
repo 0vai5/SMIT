@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Preview Image Before Upload</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h2>Preview Image Before Upload</h2>
+   <input type="file" accept="image/*" onchange="previewImage(event)">
+   <br><br>
+   <div class="toolbox" id="toolbox">
+       <label for="blurRange">Adjust Blur:</label>
+       <input type="range" id="blurRange" min="0" max="10" step="0.1" oninput="changeBlur(this.value)">
+   </div>
+   <br>
+   <img id="preview" alt="Preview Image" style="max-width: 100%; height: auto;">
+</body>
+<script src="./main.js"></script>
+</html>
