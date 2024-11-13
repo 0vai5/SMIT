@@ -1,0 +1,95 @@
+* {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fdfdfd;
+    padding: 2rem;
+  }
+  
+  .inputContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #cacaca;
+    border-radius: 7px;
+  }
+  
+  .inputContainer input {
+    padding: 7px 12px;
+    outline: none;
+    border-radius: 7px;
+    border: none;
+    width: 75%;
+  }
+  
+  #errorText {
+    color: red;
+  }
+  
+  #addBtn {
+    padding: 7px;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+  }
+  
+  .bodyContainer {
+    width: 100%;
+    margin: 0 auto;
+    background: #cccccc;
+    padding: 20px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .noteContainer {
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 7px;
+  }
+  
+  .noteBtn {
+    display: flex;
+    padding: 2px;
+    margin-top: 20px;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .noteBtn button {
+    padding: 3px;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+    font-weight: bold;
+  }
+
+  .input {
+    outline: none;
+    border: none;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .bodyContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .bodyContainer {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
