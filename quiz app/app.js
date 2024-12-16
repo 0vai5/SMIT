@@ -1,104 +1,207 @@
-var questions = [
+const questions = [
   {
-    question: "What is the capital of France?",
+    question: "What does `toUpperCase()` do to a string?",
     options: {
-      a: "London",
-      b: "Berlin",
-      c: "Madrid",
-      d: "Paris",
-    },
-    correctAnswer: "d",
-  },
-  {
-    question: "What is the tallest mountain in the world?",
-    options: {
-      a: "Kangchenjunga",
-      b: "Mount Everest",
-      c: "K2",
-      d: "Lhotse",
+      a: "Converts all letters to lowercase",
+      b: "Converts all letters to uppercase",
+      c: "Reverses the string",
+      d: "Removes spaces from the string",
     },
     correctAnswer: "b",
   },
   {
-    question: "What is the largest mammal in the world?",
+    question: "Which method returns the number of characters in a string?",
     options: {
-      a: "Elephant",
-      b: "Giraffe",
-      c: "Blue Whale",
-      d: "Hippopotamus",
+      a: "length",
+      b: "size",
+      c: "count",
+      d: "charCount",
     },
-    correctAnswer: "c",
+    correctAnswer: "a",
   },
   {
-    question: "What is the largest planet in our solar system?",
+    question: "How do you find the index of a character in a string?",
     options: {
-      a: "Earth",
-      b: "Jupiter",
-      c: "Saturn",
-      d: "Neptune",
+      a: "charIndex()",
+      b: "indexOf()",
+      c: "find()",
+      d: "getIndex()",
     },
     correctAnswer: "b",
   },
   {
-    question: "What is the smallest country in the world?",
+    question: "What does `Math.round(4.7)` return?",
     options: {
-      a: "Monaco",
-      b: "Tuvalu",
-      c: "Vatican City",
-      d: "Nauru",
+      a: "4",
+      b: "4.7",
+      c: "5",
+      d: "Error",
     },
     correctAnswer: "c",
   },
   {
-    question: "What is the capital of Australia?",
+    question:
+      "Which method generates a random number between 0 (inclusive) and 1 (exclusive)?",
     options: {
-      a: "Sydney",
-      b: "Melbourne",
-      c: "Brisbane",
-      d: "Canberra",
+      a: "Math.random()",
+      b: "Math.rand()",
+      c: "generateRandom()",
+      d: "random()",
     },
-    correctAnswer: "d",
+    correctAnswer: "a",
   },
   {
-    question: "What is the largest ocean in the world?",
+    question: "Which method converts a string to a number?",
     options: {
-      a: "Indian Ocean",
-      b: "Atlantic Ocean",
-      c: "Pacific Ocean",
-      d: "Arctic Ocean",
+      a: "parseInt()",
+      b: "toNumber()",
+      c: "StringToNumber()",
+      d: "convert()",
     },
-    correctAnswer: "c",
+    correctAnswer: "a",
   },
   {
-    question: "What is the largest desert in the world?",
+    question: "How do you set a fixed number of decimals for a number?",
     options: {
-      a: "Sahara",
-      b: "Gobi",
-      c: "Arabian",
-      d: "Antarctica",
-    },
-    correctAnswer: "d",
-  },
-  {
-    question: "What is the largest river in the world?",
-    options: {
-      a: "Yangtze",
-      b: "Amazon",
-      c: "Nile",
-      d: "Mississippi",
+      a: "Math.decimals()",
+      b: "toFixed()",
+      c: "round()",
+      d: "setDecimals()",
     },
     correctAnswer: "b",
   },
   {
-    question: "What is the largest island in the world?",
+    question: "What does `new Date()` return?",
     options: {
-      a: "Madagascar",
-      b: "New Guinea",
-      c: "Greenland",
-      d: "Borneo",
+      a: "The current date and time",
+      b: "An empty date object",
+      c: "The year only",
+      d: "The time only",
+    },
+    correctAnswer: "a",
+  },
+  {
+    question: "Which method extracts the year from a date object?",
+    options: {
+      a: "getYear()",
+      b: "getFullYear()",
+      c: "getDate()",
+      d: "getMonth()",
+    },
+    correctAnswer: "b",
+  },
+  {
+    question:
+      "What is the default value returned by a function that has no `return` statement?",
+    options: {
+      a: "undefined",
+      b: "null",
+      c: "0",
+      d: "An empty string",
+    },
+    correctAnswer: "a",
+  },
+  {
+    question: "Which keyword declares a local variable?",
+    options: {
+      a: "var",
+      b: "local",
+      c: "let",
+      d: "Both var and let",
+    },
+    correctAnswer: "d",
+  },
+  {
+    question: "How do you specify a case in a `switch` statement?",
+    options: {
+      a: "if",
+      b: "case",
+      c: "switchCase",
+      d: "when",
+    },
+    correctAnswer: "b",
+  },
+  {
+    question: "Which loop guarantees that the code runs at least once?",
+    options: {
+      a: "for loop",
+      b: "while loop",
+      c: "do...while loop",
+      d: "nested loop",
     },
     correctAnswer: "c",
   },
+  {
+    question: "Which event occurs when a user clicks on an element?",
+    options: {
+      a: "onMouse",
+      b: "onClick",
+      c: "onButton",
+      d: "onHover",
+    },
+    correctAnswer: "b",
+  },
+  {
+    question: "What does `document.getElementById()` do?",
+    options: {
+      a: "Finds all elements with a specific tag",
+      b: "Finds an element by its class",
+      c: "Finds an element by its ID",
+      d: "Finds elements by their name",
+    },
+    correctAnswer: "c",
+  },
+  {
+    question: "How do you change the text of a paragraph in JavaScript?",
+    options: {
+      a: "paragraph.text = 'New Text'",
+      b: "paragraph.innerHTML = 'New Text'",
+      c: "paragraph.setText('New Text')",
+      d: "paragraph.value = 'New Text'",
+    },
+    correctAnswer: "b",
+  },
+  {
+    question: "How do you generate a unique ID for a new DOM element?",
+    options: {
+      a: "generateID()",
+      b: "setAttribute('id', 'uniqueID')",
+      c: "createID()",
+      d: "newElement.id('uniqueID')",
+    },
+    correctAnswer: "b",
+  },
+  {
+    question: "Which property retrieves or sets the value of an input field?",
+    options: {
+      a: "value",
+      b: "innerText",
+      c: "content",
+      d: "textContent",
+    },
+    correctAnswer: "a",
+  },
+  {
+    question: "How do you target all elements with a specific tag name?",
+    options: {
+      a: "document.querySelectorAll()",
+      b: "document.getElementsByTagName()",
+      c: "document.getTag()",
+      d: "document.getAllTags()",
+    },
+    correctAnswer: "b",
+  },
+  {
+    question: "What does `appendChild()` do in the DOM?",
+    options: {
+      a: "Adds a new child node to an element",
+      b: "Removes a child node from an element",
+      c: "Inserts a new element before another element",
+      d: "Replaces an element with a new element",
+    },
+    correctAnswer: "a",
+  },
+  // Add 20 more similar questions covering the remaining topics!
 ];
 
 var quizContainer = document.getElementById("quizConatainer");
@@ -129,13 +232,16 @@ function checkAnswer(elem) {
   }
   if (correctAnswer === userAnswer) {
     elem.style.backgroundColor = "green";
+    elem.style.color = "white";
     correctAnswers++;
   } else {
+    elem.style.color = "white";
     elem.style.backgroundColor = "red";
     wrongAnswers++;
     for (let i = 0; i < allOptions.length; i++) {
       if (allOptions[i].id === correctAnswer) {
         allOptions[i].style.backgroundColor = "green";
+        elem.style.color = "white";
       }
     }
   }
@@ -154,7 +260,6 @@ function nextQuestion() {
     `;
   }
 }
-
 function restartQuiz() {
   window.location.reload();
 }
