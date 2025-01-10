@@ -16,7 +16,6 @@ const loginHandler = async () => {
     let errorText = "Email and Password Fields are required";
     errorContainer.classList.remove("d-none");
     errorContainer.innerHTML += errorText;
-    return;
   }
 
   try {

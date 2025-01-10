@@ -1,6 +1,19 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  getDocs,
+  collection,
+  deleteDoc,
+  updateDoc
+} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyDqY6L1znjfKOpXOk1E9aiyXsvQ6rBrQvQ",
   authDomain: "smit-practice-82ded.firebaseapp.com",
@@ -15,4 +28,15 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-export { app, db, auth, signInWithEmailAndPassword };
+export {
+  app,
+  db,
+  auth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  doc,
+  setDoc,
+  signOut,
+  getDocs, collection,
+  deleteDoc, updateDoc
+};
