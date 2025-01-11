@@ -50,27 +50,6 @@ const deleteBlog = async (blogId) => {
   }
 };
 
-const editBlog = async (content, title, isPrivate, id) => {
-  blogIdToBeEdited = id;
-  editContent.value = content;
-  editPrivate.checked = isPrivate;
-  editTitle.value = title;
-};
-
-const saveBlogChanges = async () => {
-  try {
-    const response = await updateDoc(doc(db, "blogs", blogIdToBeEdited), {
-      content: editContent.value,
-      isPrivate: editPrivate.checked,
-      title: editTitle.value,
-    });
-    renderBlogs();
-  } catch (error) {
-    let errorText = error.code;
-    errorContainer.classList.remove("d-none");
-    errorContainer.innerHTML += errorText;
-  }
-};
 
 const renderBlogs = async () => {
   const uid = localStorage.getItem("uid");
@@ -86,12 +65,6 @@ const renderBlogs = async () => {
                 <div class="card-body">
                   <h5 class="card-title">${blog.data().title}</h5>
                   <p class="card-text">${blog.data().content}</p>
-                  <button onclick="editBlog('${blog.data().content}', '${blog.data().title}', '${blog.data().isPrivate}', '${blog.id}' )" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Edit Blog
-  </button>
-                  <button class="btn btn-danger" onclick="deleteBlog('${
-                    blog.id
-                  }')">Delete</button>
                 </div>
               </div>
             </div>
@@ -119,5 +92,3 @@ const renderBlogs = async () => {
 window.isLoggedIn = isLoggedIn;
 window.logoutHandler = logoutHandler;
 window.deleteBlog = deleteBlog;
-window.editBlog = editBlog;
-window.saveBlogChanges = saveBlogChanges;
