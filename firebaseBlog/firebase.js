@@ -12,7 +12,8 @@ import {
   getDocs,
   collection,
   deleteDoc,
-  updateDoc
+  updateDoc,
+  addDoc
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyDqY6L1znjfKOpXOk1E9aiyXsvQ6rBrQvQ",
@@ -38,5 +39,5 @@ export {
   setDoc,
   signOut,
   getDocs, collection,
-  deleteDoc, updateDoc
+  deleteDoc, updateDoc, addDoc
 };
