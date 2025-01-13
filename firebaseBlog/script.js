@@ -4,9 +4,9 @@ import {
   signOut,
   getDocs,
   collection,
-  deleteDoc,
   doc,
   setDoc,
+  deleteDoc,
   updateDoc,
 } from "./firebase.js";
 const errorContainer = document.querySelector("#errorContainer");
