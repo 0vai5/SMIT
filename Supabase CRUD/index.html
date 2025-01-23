@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-TTrpTLu2hRVngbtFqkdrVDRB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/YbsLy8PStT1rvDB80cq47GO2u/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguB9Nm1u23Xm2RH1I6V2DzehnMhqx01A9boh9Uzu6cq" crossorigin="anonymous"></script>
+</head>
+<body onload="renderTodo()">
+    <div class="container mt-5">
+        <h1>Simple Todo List</h1>
+            <div class="input-group mb-3">
+                <input type="text" id="todoInput" class="form-control" placeholder="Add a new todo" aria-label="Todo">
+                <button class="btn btn-primary" onclick="createTodo()">Add</button>
+            </div>
+        <ul class="list-group" id="todoContainer">
+            <!-- <li class="list-group-item">
+                Todo 1  
+                <button class="btn btn-sm btn-outline-primary" onclick="editTodo()">Edit</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="deleteTodo()">Delete</button>
+            </li> -->
+
+            No Todo Found..
+            
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./script.js"></script>
+</html>
