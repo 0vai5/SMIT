@@ -6,3 +6,5 @@ export const isLoggedIn = (type) => {
         window.location.href = `${basePath}${rolePath}/dashboard/dashboard.html`;
     }
 };
+
+ezport const isAuthenticated = () => {}
