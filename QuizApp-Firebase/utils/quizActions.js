@@ -4,7 +4,7 @@ export const createQuiz = async (quiz) => {
     try {
         const quizRef = await addDoc(collection(db, "quizzes"), quiz);
         return quizRef;
-    } catch (error) {
+    } catch (error) {   
         console.log(error);
         alert(error.code);
     }

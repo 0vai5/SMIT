@@ -1,4 +1,4 @@
-import { logoutAction } from "../../utils/actions.js";
+import { logoutAction } from "../../utils/authActions.js";
 
 const logoutHandler = () => {
     logoutAction();
