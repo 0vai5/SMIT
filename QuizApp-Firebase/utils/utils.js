@@ -7,4 +7,4 @@ export const isLoggedIn = (type) => {
     }
 };
 
-ezport const isAuthenticated = () => {}
+export const isAuthenticated = () => {};

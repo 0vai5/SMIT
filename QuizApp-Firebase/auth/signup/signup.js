@@ -3,7 +3,7 @@ const password = document.querySelector("#password");
 const name = document.querySelector("#name");
 const number = document.querySelector("#number");
 import { isLoggedIn } from "../../utils/utils.js";
-import { signUpAction } from "../../utils/actions.js"
+import { signUpAction } from "../../utils/authActions.js"
 
 window.addEventListener('load', isLoggedIn('signup'));
 

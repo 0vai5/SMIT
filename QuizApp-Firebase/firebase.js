@@ -5,12 +5,15 @@ import {
   setDoc,
   collection,
   addDoc,
-  getDoc
+  getDoc,
+  updateDoc,
+  getDocs
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -36,5 +39,8 @@ export {
   createUserWithEmailAndPassword,
   setDoc,
   signInWithEmailAndPassword,
-  getDoc
+  getDoc,
+  signOut,
+  updateDoc,
+  getDocs
 };

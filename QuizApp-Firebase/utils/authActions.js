@@ -6,6 +6,7 @@ import {
   getDoc,
   doc,
   signInWithEmailAndPassword,
+  signOut
 } from "../firebase.js";
 
 export const signUpAction = async (data) => {
@@ -46,7 +47,7 @@ export const loginAction = async (data) => {
 
     const response = await signInWithEmailAndPassword(auth, email, password);
 
-    const {uid} = response.user;
+    const { uid } = response.user;
 
     const user = await getDoc(doc(db, 'user', uid));
 
@@ -62,4 +63,20 @@ export const loginAction = async (data) => {
   }
 };
 
+export const logoutAction = async () => {
+  try {
+    const response = await signOut(auth);
+    console.log(response, "response");
+    localStorage.removeItem("user");
+    window.location.replace("../index.html");
+  } catch (error) {
+    console.log(error.message);
+    alert(error.code);
+  };
+};
 
+
+export const getUser = async () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  return user;
+}
