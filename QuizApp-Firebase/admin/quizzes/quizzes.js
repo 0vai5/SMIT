@@ -1,5 +1,5 @@
 const quizContainer = document.querySelector(".quizzes-container");
-import { getAllQuizzes } from "../../utils/quizActions.js";
+import { getAllQuizzes, toggleAvailability } from "../../utils/quizActions.js";
 
 const renderQuizzes = async () => {
   const quizzes = await getAllQuizzes();
@@ -16,7 +16,11 @@ const renderQuizzes = async () => {
               </p>
 
               <p>${quiz.questions.length} Questions</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <button class="btn ${
+                quiz.available ? "btn-primary" : "btn-danger"
+              }" onclick="toggleAvailabilityAction('${quiz.id}')" }>${
+      quiz.available ? "Active" : "Not Active"
+    }</a>
             </div>
           </div>
         </div>
@@ -24,4 +28,12 @@ const renderQuizzes = async () => {
   });
 };
 
+const toggleAvailabilityAction = async (quizId) => {
+  const response = await toggleAvailability(quizId);
+  if (response) alert("Quiz availability toggled successfully");
+  renderQuizzes();
+};
+
 window.addEventListener("load", renderQuizzes);
+
+window.toggleAvailabilityAction = toggleAvailabilityAction;

@@ -10,16 +10,19 @@ export const createQuiz = async (quiz) => {
     }
 };
 
-export const toggleAvailability = async (quizId, availability) => {
+export const toggleAvailability = async (quizId) => {
     try {
 
         const quizRef = await getDoc(doc(db, "quizzes", quizId));
 
         if (quizRef.exists()) {
-            await updateDoc(doc(db, 'quizzes', quizId), {
+            const response = await updateDoc(doc(db, 'quizzes', quizId), {
                 available: !quizRef.data().available
-            })
+            });
+
+            return response;
         }
+
 
     } catch (error) {
         console.log(error);
