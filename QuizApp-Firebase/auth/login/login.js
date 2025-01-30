@@ -6,7 +6,7 @@ import { loginAction } from "../../utils/authActions.js"
 window.addEventListener('load', isLoggedIn('login'));
 
 
-const login = (btn) => {
+const login = async (btn) => {
 
   btn.disabled = true;
   btn.innerHTML = "logging in...";
@@ -18,12 +18,17 @@ const login = (btn) => {
     return;
   }
 
-  const userCredential = {
+  const credentials = {
     email: email.value,
     password: password.value
   }
 
-  loginAction(userCredential);
+  await loginAction(credentials);
+
+  btn.disabled = false;
+  btn.innerHTML = "Log in"
+
+
 };
 
 window.login = login;
