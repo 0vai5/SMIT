@@ -37,7 +37,7 @@ const logoutHandler = async () => {
 };
 
 const shifter = async (quizID) => {
-  sessionStorage.setItem('quizID',JSON.stringify(quizID));
+  sessionStorage.setItem('quizID', JSON.stringify(quizID));
   window.location.replace('../attempt-quiz/attempt-quiz.html')
 };
 

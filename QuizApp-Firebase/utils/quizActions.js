@@ -53,12 +53,11 @@ export const getQuiz = async (quizId) => {
     try {
         const quizRef = await getDoc(doc(db, "quizzes", quizId));
 
-        if (quizRef.exists()) {
-            return { ...quizRef.data(), id: quizRef.id };
+        return {
+            ...quizRef.data(),
+            id: quizRef.id  
         }
-
     } catch (error) {
         console.log(error);
-        alert(error.code);
     }
 };
