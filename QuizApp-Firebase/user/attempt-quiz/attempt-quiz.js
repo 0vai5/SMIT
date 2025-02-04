@@ -46,12 +46,33 @@ const renderQuestion = () => {
 };
 
 const nextQuestion = () => {
-  console.log("Hello")
-  index++;
-  renderQuestion();
+  if(index < questions.length - 1) {
+    index++;
+    renderQuestion();
+  } else {
+    submitHandler()
+  }
 }
 
+const submitHandler = () => {
+  console.log("Submitted")
+}
 
-// window.checkAnswer = checkAnswer;
+const checkAnswer = (elem) => {
+  const question = questions[index];
+  const correctAnswer = question.correctAnswer;
+  const selectedAnswer = elem.innerHTML;
+
+  if (correctAnswer === selectedAnswer) {
+    score++;
+    elem.style.backgroundColor = "green";
+  } else {
+    wrongAnswers++;
+  }
+}
+
+window.checkAnswer = checkAnswer;
 window.nextQuestion = nextQuestion;
 window.addEventListener("load", renderQuestion);
+window.renderQuestion = renderQuestion;
+window.submitHandler = submitHandler;
