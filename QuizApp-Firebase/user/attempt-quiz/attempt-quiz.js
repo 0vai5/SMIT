@@ -6,7 +6,6 @@ let questions = [];
 let score = 0;
 let index = 0;
 let wrongAnswers = 0;
-let totalQuestions = questions.length;
 let quizName = "";
 
 const checkQuiz = async () => {
@@ -25,7 +24,6 @@ checkQuiz()
   .then((response) => {
     questions = response.questions;
     quizName = response.quizTitle;
-    totalQuestions = questions.length;
     renderQuestion();
   })
   .catch((err) => {
@@ -33,17 +31,27 @@ checkQuiz()
   });
 
 const renderQuestion = () => {
-  const question = questions[index];
-  questionText.innerHTML = question.question;
-  optionsContainer.innerHTML = "";
+  if (index < questions.length) {
+    const question = questions[index];
+    questionText.innerHTML = question.question;
+    optionsContainer.innerHTML = "";
 
-  var options = questions[index].options;
-  optionsContainer.innerHTML = "";
-  for (var key in options) {
-    optionsContainer.innerHTML += `
+    var options = question.options;
+    for (var key in options) {
+      optionsContainer.innerHTML += `
         <button class="option" id="${key}" onclick="checkAnswer(this)">${options[key]}</button>
         `;
+    }
   }
 };
 
-window.addEventListener("load", renderQuestion());
+const nextQuestion = () => {
+  console.log("Hello")
+  index++;
+  renderQuestion();
+}
+
+
+// window.checkAnswer = checkAnswer;
+window.nextQuestion = nextQuestion;
+window.addEventListener("load", renderQuestion);
