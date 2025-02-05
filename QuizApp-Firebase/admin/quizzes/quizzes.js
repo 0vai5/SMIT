@@ -6,7 +6,7 @@ const renderQuizzes = async () => {
   quizContainer.innerHTML = "";
 
   quizzes.forEach((quiz) => {
-    quizContainer.innerHTML = `
+    quizContainer.innerHTML += `
              <div class="col-sm-6 mt-3">
           <div class="card">
             <div class="card-body">
