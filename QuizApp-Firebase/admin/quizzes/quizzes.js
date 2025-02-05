@@ -1,5 +1,6 @@
 const quizContainer = document.querySelector(".quizzes-container");
 import { getAllQuizzes, toggleAvailability } from "../../utils/quizActions.js";
+import { isAuthenticatedAdmin } from "../../utils/utils.js";
 
 const renderQuizzes = async () => {
   const quizzes = await getAllQuizzes();
@@ -35,5 +36,6 @@ const toggleAvailabilityAction = async (quizId) => {
 };
 
 window.addEventListener("load", renderQuizzes);
+window.addEventListener('load', isAuthenticatedAdmin);
 
 window.toggleAvailabilityAction = toggleAvailabilityAction;

@@ -1,4 +1,4 @@
-import { addDoc, collection, db, doc, getDoc, setDoc, updateDoc, getDocs } from "../firebase.js";
+import { addDoc, collection, db, doc, getDoc, setDoc, updateDoc, getDocs, query, where } from "../firebase.js";
 
 export const createQuiz = async (quiz) => {
     try {
@@ -61,3 +61,44 @@ export const getQuiz = async (quizId) => {
         console.log(error);
     }
 };
+
+export const getQuizList = async () => {
+    try {
+
+        const querySnapshot = await getDocs(collection(db, "quizzes"));
+
+        const quizzes = [];
+
+        querySnapshot.forEach(doc => {
+            quizzes.push({
+                id: doc.id,
+                name: doc.data().quizTitle
+            });
+        });
+
+        return quizzes;
+
+    } catch (error) {
+        alert(error.code);
+    }
+};
+
+export const getAllAttemptedQuizzes = async (uid) => {
+    try{
+        const q = query(collection(db, "scores"), where("userID", "==", uid));
+        const response = await getDocs(q);
+
+        const scores = [];
+
+        response.forEach(doc => {
+            scores.push({ ...doc.data(), id: doc.id });
+        });
+
+        return scores;
+
+
+    } catch (error) {
+        console.log(error);
+        alert(error.code);
+    };
+} 

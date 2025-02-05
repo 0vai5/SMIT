@@ -1,5 +1,6 @@
 import { logoutAction } from "../../utils/authActions.js";
 import { createQuiz } from "../../utils/quizActions.js";
+import {isAuthenticatedAdmin} from "../../utils/utils.js"
 const quizTitle = document.querySelector("#quiz-title");
 const quizCategory = document.querySelector("#quiz-category");
 const quizLabel = document.querySelector("#quiz-label");
@@ -92,3 +93,4 @@ const createQuizHandler = async (btn) => {
 window.createQuizHandler = createQuizHandler;
 window.addQuestion = addQuestion;
 window.logoutHandler = logoutHandler;
+window.addEventListener('load', isAuthenticatedAdmin);

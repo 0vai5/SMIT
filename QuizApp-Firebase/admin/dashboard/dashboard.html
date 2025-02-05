@@ -41,6 +41,38 @@
 
     <!-- Navbar End -->
 
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div class="m-3">
+      
+              <h1>Scores</h1>
+              <p>Quizzes that are attempted by users</p>
+            </div>
+            <div class="m-3">
+                <select id="quizFilter" onchange="getScoreOnChange(this)" class="form-select">
+                    <option value="all" selected>All Quizzes</option>
+                </select>
+            </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Quiz</th>
+              <th scope="col">Username</th>
+              <th scope="col">Total Questions</th>
+              <th scope="col">Correct Answer</th>
+              <th scope="col">Wrong Answer</th>
+              <th scope="col">Percentage</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+          </tbody>
+        </table>
+       </div>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

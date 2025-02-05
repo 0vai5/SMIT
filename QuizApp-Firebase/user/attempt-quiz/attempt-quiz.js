@@ -1,5 +1,6 @@
 import { getQuiz } from "../../utils/quizActions.js";
 import { createScore } from "../../utils/scoreActions.js";
+import {isAuthenticatedUser} from "../../utils/utils.js"
 const questionText = document.querySelector("#question");
 const optionsContainer = document.querySelector("#optionsContainer");
 const quizContainer = document.querySelector(".quiz-container")
@@ -9,7 +10,7 @@ let score = 0;
 let index = 0;
 let wrongAnswers = 0;
 let quizName = "";
-const { uid } = JSON.parse(localStorage.getItem("user"));
+const { uid, name } = JSON.parse(localStorage.getItem("user"));
 
 const checkQuiz = async () => {
   const quizID = JSON.parse(sessionStorage.getItem("quizID"));
@@ -66,7 +67,8 @@ const submitHandler = async () => {
     totalQuestions: questions.length,
     userID: uid,
     quizID: JSON.parse(sessionStorage.getItem("quizID")),
-    percentage: (score / questions.length) * 100
+    percentage: (score / questions.length) * 100,
+    userName: name
   }
 
   const response = await createScore(scoreObj);
@@ -91,12 +93,17 @@ const submitHandler = async () => {
     <p>Correct Answers: ${score}</p>
     <p>Wrong Answers: ${wrongAnswers}</p>
     <p>Percentage: ${(score / questions.length) * 100}%</p>
+    <button class="btn btn-primary mt-2" onclick="navigate()">Return to Dashboard</button>
     </div>
   `
 
 
 
+}
 
+const navigate = () => {
+  sessionStorage.removeItem("quizID");
+  window.location.replace("../dashboard/dashboard.html");
 }
 
 const checkAnswer = (elem) => {
@@ -121,5 +128,6 @@ const checkAnswer = (elem) => {
 window.checkAnswer = checkAnswer;
 window.nextQuestion = nextQuestion;
 window.addEventListener("load", renderQuestion);
+window.addEventListener("load", isAuthenticatedUser);
 window.renderQuestion = renderQuestion;
 window.submitHandler = submitHandler;

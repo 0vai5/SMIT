@@ -68,7 +68,7 @@ export const logoutAction = async () => {
     const response = await signOut(auth);
     console.log(response, "response");
     localStorage.removeItem("user");
-    window.location.replace("../index.html");
+    window.location.replace("../../index.html");
   } catch (error) {
     console.log(error.message);
     alert(error.code);
