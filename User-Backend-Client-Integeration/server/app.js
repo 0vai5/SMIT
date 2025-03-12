@@ -21,6 +21,27 @@ app.get("/getAllUsers", (req, res) => {
   res.send("No users found");
 });
 
+app.get("/getUser/:id", (req, res) => {
+  if(fs.existsSync("users.txt")) {
+    const data = JSON.parse(fs.readFileSync("users.txt", "utf-8"));
+    const { id } = req.params;
+
+    const user = data.find((user) => user.id === id);
+
+    if (user) {
+      return res.json({
+        message: "User fetched Successfully",
+        data: user,
+      });
+    }
+
+    return res.json({
+      message: "User not found",
+      data: {}
+    });
+  }
+})
+
 app.post("/createUser", (req, res) => {
   // agr pehle se user hai us email s to nhi add krna message bhej do warna add krdo
 
@@ -39,7 +60,6 @@ app.post("/createUser", (req, res) => {
   if (user) {
     return res.json({
       message: "User already exists",
-      data,
     });
   }
 
@@ -62,9 +82,11 @@ app.post("/updateUser/:id", (req, res) => {
     if (user.id === id) {
       return {
         ...user,
-        body,
+        ...body
       };
     }
+
+    return user;
   });
 
   fs.writeFileSync("users.txt", JSON.stringify(userUpdated));

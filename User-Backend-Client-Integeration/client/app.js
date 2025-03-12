@@ -1,19 +1,17 @@
 const username = document.querySelector('#username');
 const email = document.querySelector('#email');
-const password = document.querySelector('#password');
 
 const createUser = async() => {
     try {
 
-        if(!username.value || !email.value || !password.value) {
+        if(!username.value || !email.value ) {
             alert('All fields are required');
             return;
         }
 
         const user = {
             username: username.value,
-            email: email.value,
-            password: password.value
+            email: email.value
         }
 
         const response = await fetch('http://localhost:5000/createUser', {
