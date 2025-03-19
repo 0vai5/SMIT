@@ -20,20 +20,20 @@ Connect();
 
 app.post("/createTodo", async (req, res) => {
   try {
-    const { title, description } = req.body;
+    const { todo, description } = req.body;
 
-    const todo = new Todo({
-      title,
+    const response = new Todo({
+      todo,
       description,
     });
 
     if (!todo) throw new Error("Error Creating TODO");
 
-    await todo.save();
+    await response.save();
 
     return res.json({
       message: "Successfully! created Todo",
-      todo,
+      response,
     });
   } catch (error) {
     return res.json({
@@ -62,7 +62,7 @@ app.get("/getTodo", async (req, res) => {
   }
 });
 
-app.post("/deleteTodo/:id", async (req, res) => {
+app.delete("/deleteTodo/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -84,12 +84,12 @@ app.put("/updateTodo/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    const { title, description } = req.body;
+    const { todo, description } = req.body;
 
     const response = await Todo.findByIdAndUpdate(
       id,
       {
-        title,
+        todo,
         description,
       },
       { new: true }
