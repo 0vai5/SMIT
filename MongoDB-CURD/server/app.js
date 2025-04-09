@@ -111,6 +111,30 @@ app.put("/updateTodo/:id", async (req, res) => {
   }
 });
 
+app.post("/deleteAll", async (req, res) => {
+  const { ids } = req.body;
+
+  try {
+    const response = await Todo.deleteMany({ _id: ids });
+
+    if (!response) {
+      return res.json({
+        message: "Error Deleting Todos",
+      });
+    }
+
+    return res.json({
+      message: "Successfully Deleted Todos",
+    });
+
+
+  } catch (error) {
+    return res.json({
+      message: error.message,
+    });
+  }
+});
+
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${5000}`)
 );

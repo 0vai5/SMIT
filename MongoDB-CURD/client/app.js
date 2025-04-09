@@ -2,10 +2,14 @@ const title = document.querySelector("#title");
 const description = document.querySelector("#description");
 const row = document.querySelector(".row");
 
+let allTodos = [];
+
 const fetchData = async () => {
   console.log("fetching");
   const response = await fetch("http://localhost:5000/getTodo");
   const data = await response.json();
+
+  allTodos = data.todos;
 
   console.log(data);
   row.innerHTML = "";
@@ -94,6 +98,19 @@ const deleteTodo = async (id) => {
   console.log(response);
   const data = await response.json();
 
+  fetchData();
+};
+
+const deleteAll = async () => {
+  const response = await fetch("http://localhost:5000/deleteAll", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ids: allTodos.map((todo) => todo._id) }),
+  });
+
+  const data = await response.json();
   fetchData();
 };
 
